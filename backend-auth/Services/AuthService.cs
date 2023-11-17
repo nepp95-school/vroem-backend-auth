@@ -1,11 +1,10 @@
-﻿using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-
-using backend_auth.Interfaces;
+﻿using backend_auth.Interfaces;
 using backend_auth.Models;
 using backend_auth.Models.Requests;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
+using System.Text;
 
 namespace backend_auth.Services
 {
@@ -33,7 +32,6 @@ namespace backend_auth.Services
 
 		public string GenerateJwtToken(User user)
 		{
-			// generate token that is valid for 7 days
 			var tokenHandler = new JwtSecurityTokenHandler();
 			var key = Encoding.ASCII.GetBytes(_token);
 			var tokenDescriptor = new SecurityTokenDescriptor

@@ -1,13 +1,12 @@
-using Microsoft.AspNetCore.Mvc;
-
 using backend_auth.Interfaces;
 using backend_auth.Models;
 using backend_auth.Models.Requests;
 using backend_auth.Models.Responses;
+using Microsoft.AspNetCore.Mvc;
 
 namespace backend_auth.Controllers
 {
-    [ApiController]
+	[ApiController]
 	[Route("[controller]")]
 	public class AuthController : ControllerBase
 	{
