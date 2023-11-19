@@ -25,12 +25,14 @@ namespace backend_auth.Controllers
 		{
 			User? user = _authService.Authenticate(request);
 
-			if (user == null)
-				return null;
+			UserResponse response = new UserResponse();
+			if (user != null)
+			{
+				string token = _authService.GenerateJwtToken(user);
+				response = new UserResponse(user, token);
+			}
 
-			string token = _authService.GenerateJwtToken(user);
-
-			return new UserResponse(user, token);
+			return response;
 		}
 	}
 }

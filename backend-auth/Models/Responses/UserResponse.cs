@@ -2,9 +2,12 @@
 {
 	public class UserResponse
 	{
-		public int Id { get; set; }
+		public int Id { get; set; } = -1;
 		public string Username { get; set; }
 		public string Token { get; set; }
+
+		public UserResponse()
+		{}
 
 		public UserResponse(User user, string token)
 		{
